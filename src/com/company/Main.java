@@ -1,6 +1,8 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 public class Main {
 
@@ -25,5 +27,25 @@ public class Main {
         album.addSong("B.Y.S.", 3.18);
         album.addSong("us", 5.21);
         albums.add(album);
+    }
+
+    private static void printMenu() {
+        System.out.println("Available actions:\npress");
+        System.out.println("0 - to quit\n" +
+                "1 - to play next song\n" +
+                "2 - to play previous song\n" +
+                "3 - to replay the current song\n" +
+                "4 - list songs in playlist\n" +
+                "5 - print available actions.\n" +
+                "6 - remove current song from playlist");
+    }
+
+    private static void printList(LinkedList<Song> playlist) {
+        Iterator<Song> iterator = playlist.iterator();
+        System.out.println("=============================");
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+        System.out.println("=============================");
     }
 }
